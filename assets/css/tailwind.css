@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "DM Sans";
+    @apply overflow-x-hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Marcellus", serif;
+}
+
+@layer utilities {
+    .font-serif {
+        font-family: "Marcellus", serif;
+    }
+    .marquee-30 {
+        animation: marquee 30s linear infinite;
+    }
+    .marquee-15 {
+        animation: marquee 15s linear infinite;
+    }
+    .marquee-10 {
+        animation: marquee 10s linear infinite;
+    }
+}
+
+.toggled div:first-child {
+    @apply translate-y-1.5 rotate-45;
+}
+.toggled div:last-child {
+    @apply -translate-y-1 -rotate-45;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
